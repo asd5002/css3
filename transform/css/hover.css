@@ -1,0 +1,34 @@
+.albums-thumb img{
+	transition:all 1s linear;
+	box-shadow: 5px 5px 10px black;
+	transform-origin: center 1200px;
+}
+/****************************albums-hover-1*************************/
+.albums-hover-1:hover img:nth-child(1){
+	transform: rotate(20deg);
+}
+.albums-hover-1:hover img:nth-child(2){
+	transform: rotate(-20deg);
+}
+.albums-hover-1:hover img:nth-child(3){
+	transform: rotate(15deg);
+}
+.albums-hover-1:hover img:nth-child(4){
+	transform: rotate(-15deg);
+}
+.albums-hover-1:hover img:nth-child(5){
+	transform: rotate(10deg);
+}
+.albums-hover-1:hover img:nth-child(6){
+	transform: rotate(-10deg);
+}
+.albums-hover-1:hover img:nth-child(7){
+	transform: rotate(5deg);
+}
+.albums-hover-1:hover img:nth-child(8){
+	transform: rotate(-5deg);
+}
+.albums-hover-1:hover img:nth-child(9){
+	transform: scale(1.02);
+}
+

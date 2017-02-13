@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 60px;
+				height: 30px;
+				border-top-left-radius: 100px;
+				border-top-right-radius: 100px;
+				border-left: 10px solid red;
+				border-top: 10px solid red;
+				border-right: 10px solid red;
+				position: absolute;
+				transform-origin: 40px 40px;
+			}
+			.box2{
+				width: 20px;
+				height: 10px;
+				border-top-left-radius: 100px;
+				border-top-right-radius: 100px;
+				border-left: 10px solid red;
+				border-top: 10px solid red;
+				border-right: 10px solid red;
+				position: absolute;
+				left: 20px;
+				top: 20px;
+				transform-origin: 20px 20px;
+			}
+			#all{
+				position: relative;
+				margin: 100px auto 0;
+				width: 80px;
+				height: 80px;
+			}
+			@keyframes rot{
+				to{transform: rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="all">
+			<div class="box1"></div>
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>

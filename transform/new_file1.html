@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#all{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				transition: all 1s;
+				/*display: none;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="all">
+			
+		</div>
+		<script type="text/javascript">
+			var all = document.getElementById("all");
+			var i=0;
+			var j=0;
+			var timer = setInterval(function(){
+				i++;
+				all.style.transform = "rotate("+i*30+"deg)";
+			},1000)
+			var timer2 = setInterval(function(){
+				j++;
+				if(j%2==0){
+					all.style.display = "none";
+				}else{
+					all.style.display = "block";
+				}
+//				if(j%2==0){
+//					all.style.visibility = "hidden";
+//				}else{
+//					all.style.visibility = "visible";
+//				}
+			},1500)
+		</script>
+	</body>
+</html>

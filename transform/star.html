@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#all{
+				width: 0;
+				height: 0;
+				margin: 50px 0;
+				position: relative;
+				margin: 100px auto;
+				display: block;
+				border-left: 100px solid transparent;
+				border-right: 100px solid transparent;
+				border-bottom: 70px solid red;
+				-moz-transfrom:rotate(35deg);
+				-webkit-transform:rotate(35deg);
+				-ms-transform:rotate(35deg);
+				-o-transform:rotate(35deg);
+			}
+			#all:before{
+				width: 0;
+				height: 0;
+				border-left: 100px solid transparent;
+				border-right: 100px solid transparent;
+				border-bottom: 70px solid red;
+				position: absolute;
+				top: 6px;
+				left: -102px;
+				display: block;
+				content: "";
+				-moz-transform:rotate(-145deg);
+				-webkit-transform:rotate(-145deg);
+				-ms-transform:rotate(-145deg);
+				-o-transform:rotate(-145deg); 
+			}
+			#all:after{
+				width: 0;
+				height: 0;
+				display: block;
+				position: absolute;
+				color: red;
+				top: 0px;
+				left: -99px;
+				border-left: 100px solid transparent;
+				border-right: 100px solid transparent;
+				border-bottom: 70px solid red;
+				content: "";
+				-moz-transform:rotate(-70deg);
+				-webkit-transform:rotate(-70deg);
+				-ms-transform:rotate(-70deg);
+				-o-transform:rotate(-70deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="all"></div>
+	</body>
+</html>

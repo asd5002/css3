@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			canvas{
+				background-color: black
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<script type="text/javascript">
+			var oCan = $("#canvas")[0];
+			var wid = $(document).width();
+			var hei = $(document).height();
+			oCan.width = wid;
+			oCan.height = hei;
+			var num = 70;
+			var balls = [];
+			var ctx = oCan.getContext("2d");
+//			ctx.beginPath();
+//			ctx.arc(10,10,5,0,Math.PI*2);
+//			ctx.fillStyle = "white";
+//			ctx.fill();
+			function createBall(){
+				for(var i=0;i<num;i++){
+					var r = randomNum(5,10)
+					balls.push({bx:randomNum(r,wid-r),by:randomNum(r,hei-r),br:r,sx:(randomNum(-2,2)/3),sy:(randomNum(-2,2)/3)});
+				}
+				console.log(balls);
+			}
+			function updateBall(){
+//				console.log(1)
+				for(var i=0;i<num;i++){
+					var ball = balls[i];
+					ball.bx+=ball.sx;
+					ball.by+=ball.sy;
+					if(ball.bx>(wid-ball.br)||ball.bx<ball.br){
+						ball.sx*=-1;
+					}
+					if(ball.by>(hei-ball.br)||ball.by<ball.br){
+						ball.sy*=-1;
+					}
+					ctx.beginPath();
+					ctx.arc(ball.bx,ball.by,ball.br,0,Math.PI*2);
+					ctx.fillStyle = "white";
+					ctx.fill();
+					ctx.closePath();
+				}
+			}
+			function createLine(){
+				for(var i=0;i<num;i++){
+					var ball = balls[i];
+					for(var j=i;j<num;j++){
+						var bal = balls[j];
+						var lineLength = (bal.bx-ball.bx)*(bal.bx-ball.bx)+(bal.by-ball.by)*(bal.by-ball.by)-25000;
+						var opac = -lineLength/20000;
+						opac>=1?1:opac;
+//						console.log(opac)
+						if(lineLength<0){
+							ctx.beginPath();
+							ctx.moveTo(ball.bx,ball.by);
+							ctx.lineTo(bal.bx,bal.by);
+							ctx.lineWidth = "1"
+							ctx.strokeStyle = "rgba(255,255,255,"+opac+")";
+							ctx.stroke();
+							ctx.closePath();
+						}
+					}
+				}
+			}
+			function randomNum(min,max){
+				return Math.random()*(max-min+1)+min;
+			}
+			createBall();
+			var timer = setInterval(function(){
+				ctx.clearRect(0,0,wid,hei)
+				createLine();
+				updateBall();
+			},30)
+		</script>
+	</body>
+</html>

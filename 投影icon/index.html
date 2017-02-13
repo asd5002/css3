@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			/*.icon {
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.icon:after {
+				left: 0;
+				top: 0;
+				position: absolute;
+				content: '';
+				display: block;
+				height: 20px;
+				width: 20px;
+				text-align: center;
+				border-right: 20px solid transparent;
+				background: transparent none no-repeat center center;
+				-webkit-filter: drop-shadow(20px 0 #f00);
+				filter: drop-shadow(20px 0 #f00);
+			}
+			
+			.icon-del:after {
+				background-image: url(img/delete.png);
+			}*/
+			.icon {
+			    display: inline-block;
+			    width: 20px; height: 20px;
+			    overflow: hidden;
+			}
+			.icon-del {
+			    background: url(img/delete.png) no-repeat center;
+			}
+			.icon > .icon {
+			    position: relative;
+			    left: -20px;
+			    outline: 20px solid transparent;
+			    -webkit-filter: drop-shadow(20px 0 #f00);
+			    filter: drop-shadow(20px 0 #f00);    
+			}
+		</style>
+	</head>
+
+	<body>
+		<p><strong>可以变色的图标</strong></p>
+		<i class="icon"><i class="icon icon-del"></i></i>
+	</body>
+
+</html>
